@@ -61,6 +61,7 @@ import android.os.SystemClock;
 import android.os.Vibrator;
 import android.preference.PreferenceManager;
 import android.provider.Settings;
+import android.support.v4.app.NotificationCompat;
 import android.telephony.TelephonyManager;
 import android.text.TextUtils;
 import android.util.Log;
@@ -286,17 +287,20 @@ import org.zoolu.sip.provider.SipProvider;
 	        NotificationManager mNotificationMgr = (NotificationManager) mContext.getSystemService(Context.NOTIFICATION_SERVICE);
 	        if (text != null) {
 		        Notification notification = new Notification();
+		        NotificationCompat.Builder builder=new NotificationCompat.Builder(mContext);
+		        
 		        notification.icon = mInCallResId;
 				if (type == MISSED_CALL_NOTIFICATION) {
 			        	notification.flags |= Notification.FLAG_AUTO_CANCEL;
-			        	notification.setLatestEventInfo(mContext, text, mContext.getString(R.string.app_name),
+			        	//TODO
+			        	/*notification.setLatestEventInfo(mContext, text, mContext.getString(R.string.app_name),
 			        			PendingIntent.getActivity(mContext, 0, createCallLogIntent(), 0));
 			        	if (PreferenceManager.getDefaultSharedPreferences(Receiver.mContext).getBoolean(org.sipdroid.sipua.ui.Settings.PREF_NOTIFY, org.sipdroid.sipua.ui.Settings.DEFAULT_NOTIFY)) {
 				        	notification.flags |= Notification.FLAG_SHOW_LIGHTS;
-				        	notification.ledARGB = 0xff0000ff; /* blue */
+				        	notification.ledARGB = 0xff0000ff;  blue 
 				        	notification.ledOnMS = 125;
 				        	notification.ledOffMS = 2875;
-			        	}
+			        	}*/
 	        	} else {
 	        		switch (type) {
 		        	case MWI_NOTIFICATION:

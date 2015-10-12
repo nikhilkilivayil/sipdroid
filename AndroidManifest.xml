@@ -28,7 +28,7 @@
     android:versionName="3.6 beta"
     android:versionCode="99"
     android:installLocation="auto">
-	<uses-sdk android:minSdkVersion="5" android:targetSdkVersion="16"/>
+	<uses-sdk android:minSdkVersion="8" android:targetSdkVersion="22"/>
 	<supports-screens
           android:normalScreens="true"
           android:smallScreens="true"
